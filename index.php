@@ -4,20 +4,14 @@ include_once('App.php');
  * Récupération de la donnée nbCotes
  * Si la donnée est absente ou si la donnée vaut 0, on choisit une valeur aléatoire (rand)
  */
-if (isset($_GET['nbCotes']) && $_GET['nbCotes'] != 0) {
-    $nbCotes = $_GET['nbCotes'];
-} else {
-    $nbCotes = rand(3, 8);
-}
+
+
 /**
  * Récupération de la donnée couleur
  * Si la donnée est absente, on choisit une valeur aléatoire
  */
-if (isset($_GET['couleur'])) {
-    $couleur = $_GET['couleur'];
-} else {
-    $couleur = App::couleurAlea();
-}
+
+
 ?><!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -36,20 +30,20 @@ if (isset($_GET['couleur'])) {
                 <div>
                     <label for="nbCotes">Nombre de côtés</label>
                     <!-- Champ nbCotes -->
-                    <?php echo App::html_nbCotes($nbCotes); ?>
+
                     <!-- /Champ nbCotes -->
                 </div>
                 <div>
                     <label for="couleur">Couleur</label>
                     <!-- Champ couleur -->
-                    <?php echo App::html_couleur($couleur); ?>
+
                     <!-- /Champ couleur -->
                 </div>
                 <div><button type="submit">Créer</button></div>
                 <div><button type="submit" onclick="nbCotes.value=0;couleur.disabled=true">Aléa</button></div>
             </form>
             <!-- Affichage du résultat -->
-            <?php echo App::html_svg($nbCotes, $couleur); ?>
+
             <!-- /Affichage du résultat -->
         </div>
         <footer>&copy; Cégep de Saint-Jérôme - Martin Boudreau</footer>
